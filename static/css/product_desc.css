@@ -1,0 +1,253 @@
+main{
+    background-color: #F3F5F5;
+}
+
+.img_and_short_desc{
+    padding: calc(39.5px + 39.5 * (100vw / 1600)) 0 calc(24.5px + 24.5 * (100vw / 1600))  0;
+}
+
+.img_and_short_desc_section{
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 auto;
+
+    background-color: #fff;
+    
+
+    border-radius: 7px;
+    padding: 14px 16px 20px 20px;
+    
+
+    margin-bottom: 40px;
+    
+}
+
+.product_img_and_price {
+    width: 480px;
+    
+}
+
+.product_img{
+    width: 242px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 21px;
+}
+
+.price_of_product{
+    font-size: calc(20px + 7 * (100vw / 1600));
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    color: #273133;
+
+    margin-bottom: 21px;
+}
+
+.product_warning{
+    font-size: calc(9px + 2 * (100vw / 1600));
+    font-weight: 400;
+    color: #8EA0A3;
+    font-family: "Open Sans", sans-serif;
+    line-height: 15px;
+
+}
+
+.img_and_short_desc_article{
+    width: 711px;
+   
+}   
+
+.img_and_short_desc_h2{
+    font-size: calc(20px + 7 * (100vw / 1600));
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    color: #273133;
+
+    margin-bottom: 23px;
+}
+
+
+.brief_characterization_wrapper{
+    border-bottom: 1px solid #F3F5F5;
+}
+
+.brief_сharacterization{
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 0;
+}
+
+
+.brief_сharacterization1{
+    width: 311px;
+}
+
+.brief_сharacterization2{
+    width: 265px;
+}
+
+.brief_сharacterization3{
+    width: 305px;
+}
+
+.brief_сharacterization4{
+    width: 252px;
+    margin-bottom: 0;
+}
+
+
+
+.img_and_short_desc_article div small{
+    font-size: calc(12px + 2 * (100vw / 1600));
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    color: #8EA0A3;
+}
+
+.img_and_short_desc_article div span{
+    font-size: calc(12px + 2 * (100vw / 1600));
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    color:#273133;
+}
+
+.desc_of_prodcut{
+    font-family: "Inter", sans-serif;
+    
+    
+    
+}
+
+
+.desc_of_prodcut_h2{
+    font-size: calc(20px + 7 * (100vw / 1600));
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.desc_of_product_article{
+    padding: 19.5px 19.5px 20px 20px;
+    border-radius: 7px;
+    background-color: #fff;
+
+    margin-bottom: 13px;
+
+}
+
+.rest_desc_wrapper{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.rest_desc_of_product{
+   
+}
+
+.desc_of_product_article div{
+    margin-bottom: 20px;
+
+}
+
+.desc_of_product_article div:last-child{
+    margin-bottom: 0;
+}
+
+.desc_of_product_article div h3{
+    margin-bottom: 12px;
+}
+
+.desc_of_product_article div p{
+    font-size: calc(12px + 2 * (100vw / 1600));
+    font-weight: 400;
+    line-height: 24px;
+    color: #273133;
+}
+
+.desc_of_product_h6{
+    margin-bottom: 0.5px;
+}
+
+.desc_of_product_h3{
+    font-size: calc(18px + 3 * (100vw / 1600));
+    margin-bottom: 20px;
+}
+
+.desc_of_product_h3:last-child{
+    margin-bottom: 0;
+}
+
+.show_all_btn_wrapper{
+    text-align: center;
+}
+
+.show_all_btn{
+    border-radius: 10px;
+    width: 250px;
+    padding: 10px 20px;
+    font-size: calc(18px + 2 * (100vw / 1600));
+    background-color: #36B389;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+
+    
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.show_all_btn:hover{
+    background-color: rgb(43, 143, 109);
+}
+
+@media(max-width: 1130px){
+    .img_and_short_desc_section{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+
+    
+    
+
+
+    .product_img_and_price{
+
+        margin-bottom: 50px;
+    }
+
+    .img_and_short_desc_article{
+        width: 100%;
+        text-align: center;
+    }
+
+    .brief_сharacterization{
+        width: 100%;
+    }
+    
+}
+
+@media(max-width: 860px){
+    .show_all_btn{
+        width: 100%;
+    }
+
+    .product_img_and_price{
+        max-width: 100%;
+
+    }
+
+    
+    
+}
+
+
+@media(max-width: 365px){
+    .product_img{
+        max-width: 100%;
+    }
+}

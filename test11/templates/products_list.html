@@ -1,0 +1,14 @@
+{% for product in products %}
+    <aside class="non_prescription_aside">
+        <a href="{{ product.get_absolute_url }}" class="non_prescription_link">
+            <div class="med_img_wrapper">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+    
+            <h6 class="non_prescription_h6">{{ product.manufacturer }}</h6>
+            <p class="non_prescription_p">{{ product.name }}</p>
+    
+            <h5 class="non_prescription_h5">{{ product.price }} ₽</h5>
+        </a>
+    </aside>
+{% endfor %}
