@@ -84,6 +84,35 @@ for (let i = 0; i < faqQuestionOpenAndClose.length; i++) {
         }
     });
 }
+document.getElementById('callbackForm').addEventListener('submit', function(event) {
+    var radioButtons = document.querySelectorAll('input[name="call_now"]');
+    var timeSelect = document.querySelector('.time_select');
+    var privacyPolicyCheckbox = document.getElementById('privacyPolicyCheckbox');
+
+    var selectedRadio = false;
+
+    // Проверяем, выбран ли хотя бы один радиобаттон
+    radioButtons.forEach(function(radioButton) {
+        if (radioButton.checked) {
+            selectedRadio = true;
+        }
+    });
+
+    // Если ни один радиобаттон не выбран, отменяем отправку формы и показываем сообщение
+    if (!selectedRadio || (radioButtons[1].checked && timeSelect.value === '') || !privacyPolicyCheckbox.checked) {
+        event.preventDefault();
+
+        if (!selectedRadio) {
+            alert('Пожалуйста, выберите предпочтительное время звонка.');
+        } else if (radioButtons[1].checked && timeSelect.value === '') {
+            alert('Пожалуйста, выберите точное время звонка.');
+        }
+
+        if (!privacyPolicyCheckbox.checked) {
+            alert('Пожалуйста, примите условия политики защиты персональной информации.');
+        }
+    }
+});
 
 
 showAllBtn.addEventListener('click',()=>{
@@ -159,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 // showAllBtn.addEventListener('click',()=>{
 //     restDescOfProduct.style.display = 'block'
 //     showAllBtn.innerHTML = 'Свернуть'

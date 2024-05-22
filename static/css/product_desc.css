@@ -68,31 +68,35 @@ main{
 }
 
 
-.brief_characterization_wrapper{
+.brief_characterization_wrapper {
     border-bottom: 1px solid #F3F5F5;
 }
 
-.brief_сharacterization{
+.brief_сharacterization {
     display: flex;
-    justify-content: space-between;
-    padding:  10px 0;
+    align-items: center;
+    padding: 10px 0;
 }
 
-
-.brief_сharacterization1{
-    width: 311px;
+.brief_сharacterization small {
+    width: 350px;
+    display: inline-block;
+    text-align: left;
+    padding-right: 10px;
+    box-sizing: border-box;
 }
 
-.brief_сharacterization2{
-    width: 265px;
+.brief_сharacterization span {
+    flex-grow: 1;
+    display: inline-block;
+    text-align: left;
 }
 
-.brief_сharacterization3{
-    width: 305px;
-}
-
-.brief_сharacterization4{
-    width: 252px;
+.brief_сharacterization1,
+.brief_сharacterization2,
+.brief_сharacterization3,
+.brief_сharacterization4 {
+    width: 100%;
     margin-bottom: 0;
 }
 

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика защиты персональной информации</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/privacypolicy.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="modal_window_request_a_call">
+        <section class="request_a_call_section">
+            <div class="call_me_back_and_close">
+                <h4 class="call_me_back_h4">Перезвоните мне</h4>
+
+                <button class="close_btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" enable-background="new 0 0 20 20"><path class="st0" d="M20 18.5l-1.5 1.5-8.5-8.5-8.5 8.5-1.5-1.5 8.5-8.5-8.5-8.5 1.5-1.5 8.5 8.5 8.5-8.5 1.5 1.5-8.5 8.5 8.5 8.5z"/></svg></button>
+            </div>
+
+              <form method="post" action="/callback_request/" class="request_a_call_form" id="callbackForm">
+    {% csrf_token %}
+    <input type="text" placeholder="Имя" name="name" class="name_inp" required>
+    <input type="tel" placeholder="Телефон" name="phone" class="tel_inp" required>
+
+    <label class="request_a_call_now">
+        <input type="radio" class="real_radio" name="call_now" value="Сейчас">
+        <span class="custom_radio"></span>
+        Сейчас
+    </label>
+
+    <label class="request_a_call_exact_time">
+        <input type="radio" class="real_radio" name="call_now" value="Точное время">
+        <span class="custom_radio"></span>
+        Точное время
+    </label>
+
+    <div class="time_select_wrapper">
+        <select class="time_select" name="call_time">
+            <option value="">Выберите время...</option>
+            <option value="10-12">с 10:00 до 12:00</option>
+            <option value="12-14">с 12:00 до 14:00</option>
+            <option value="14-16">с 14:00 до 16:00</option>
+            <option value="16-18">с 16:00 до 18:00</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Жду звонка" class="request_a_call_btn">
+</form>
+
+<div class="checkbox_wrapper" style="clear:both;">
+    <label class="warning_label">
+        <input type="checkbox" class="real_checkbox" id="privacyPolicyCheckbox" required>
+        <span class="custom_checkbox"></span>
+        Передавая информацию сайту вы принимаете условия
+        <a href="{% url 'privacypolicy' %}">политики защиты персональной информации</a>
+    </label>
+</div>
+        </section>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="schedule">
+                    <img src="{% static 'img/time.svg' %}" alt="time" class="time_icon ">
+
+                    <span class="schedule_info">График работы 07:00-18:00</span>
+                </div>
+
+                <div class="phonenumber_request_a_call">
+                    <a href="tel:+79289996699">
+                        <img src="{% static 'img/phone.svg' %}" alt="phone" class="phone_icon icon">
+                    </a>
+
+                    <div class="call_or_request">
+                        <a href="tel:+79289996699" class="phonenumber_link">8 928 999-66-99</a>
+                        <span class="request_a_call">Заказать звонок</span>
+                    </div>
+                </div>
+
+                <div class="location">
+                    <a href="https://yandex.ru/maps/11029/rostov-oblast/house/observatornaya_ulitsa_38/Z0AYcQVoTUAFQFptfX9xeXVqYQ==/?ll=39.728451%2C47.308995&z=17" target="_blank">
+                        <img src="{% static 'img/location.svg' %}" alt="location" class="location_icon icon">
+                    </a>
+
+                    <a href="https://yandex.ru/maps/11029/rostov-oblast/house/observatornaya_ulitsa_38/Z0AYcQVoTUAFQFptfX9xeXVqYQ==/?ll=39.728451%2C47.308995&z=17" target="_blank" class="location_link">г.Ростов-на-Дону ул.Обсерваторная 38</a>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+
+            <div class="header_middle">
+                <a href="{% url 'index' %}"><img src="{% static 'img/LOGO1.svg' %}" alt="logo" class="logo"></a>
+
+                <form action="{% url 'general_search' %}" method="get" class="search_form">
+                    <div class="search_inp_and_btn">
+                        <div class="input_wrapper">
+                            <input type="search" name="search" class="search_inp" placeholder="Поиск лекарств" required>
+                            <img src="{% static 'img/search_.svg' %}" alt="search" class="search_icon">
+                            </button>
+                        </div>
+
+                        <input type="submit" value="Найти" class="search_btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="header_bottom">
+            <div class="container">
+                <nav class="header_bottom_menu_wrapper">
+                    <menu class="header_bottom_menu">
+                        <li><a href="{% url 'about' %}" class="menu_link">о нас</a></li>
+                        <li><a href="{% url 'contact' %}" class="menu_link">контакты</a></li>
+                        <li><a href="{% url 'catalog' %}" class="menu_link">каталог</a></li>
+                        <li><a href="{% url 'howtoorder' %}" class="menu_link">как оформить заказ</a></li>
+                        <li><a href="{% url 'documents' %}" class="menu_link">документы</a></li>
+                        <li><a href="{% url 'faq' %}" class="menu_link faq_link">вопросы и ответы</a></li>
+
+                        <div class="mobile_menu_separator"></div>
+
+                        <li class="menu_link_mobile_li schedule_info  menu_link_mobile_info">График работы 07:00-18:00</li>
+                        <li class="menu_link_mobile_li"><a href="tel:+79289996699" class="phonenumber_link menu_link_mobile_info">8 928 999-66-99</a></li>
+                        <li class="menu_link_mobile_li request_a_call request_a_call_mobile">Заказать звонок</li>
+                        <li class="menu_link_mobile_li"><a href="https://yandex.ru/maps/11029/rostov-oblast/house/observatornaya_ulitsa_38/Z0AYcQVoTUAFQFptfX9xeXVqYQ==/?ll=39.728451%2C47.308995&z=17" target="_blank" class="location_link menu_link_mobile_info">г.Ростов-на-Дону ул.Обсерваторная 38</a></li>
+                    </menu>
+                </nav>
+
+
+                <button class="burger">
+                    <span class="burger_span"></span>
+                    <span class="burger_span"></span>
+                    <span class="burger_span"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="about_us">
+            <div class="container">
+                <h1 class="about_us_h1">Политика защиты персональной информации</h1>
+
+                <div class="about_us_desc_wrapper">
+                 <p class="about_us_p">
+                    Присоединяясь к настоящей Политике и оставляя свои данные на Сайте лекаръ.рф, (далее – Сайт), путем заполнения полей формы заказа Пользователь:
+                </p><br>
+                <ul class="custom-list">
+                    <li>подтверждает, что все указанные им данные принадлежат лично ему;</li><br>
+                    <li>подтверждает и признает, что им внимательно в полном объеме прочитана Политика и условия обработки его персональных данных, указываемых им в полях формы, текст Политики и условия обработки персональных данных ему понятны;</li><br>
+                    <li>дает согласие на обработку Сайтом предоставляемых в составе информации персональных данных в целях заключения между ним и Сайтом настоящей Политики, а также его последующего исполнения;</li><br>
+                    <li>дает согласие на передачу своих персональных данных партнерам мероприятий организатора;</li><br>
+                    <li>дает согласие на получение информационной рассылки о новостях Сайта, в том числе анонсов статей, размещенных на Сайте и рекламных материалов от партнеров Сайта;</li><br>
+                    <li>выражает согласие с условиями обработки персональных данных владельцем сайта лекаръ.рф – ООО «Лекаръ» ИНН 6102041487, расположенному по адресу 344114, Ростовская область, Аксайский район, поселок Верхнетемерницкий, Обсерваторная ул, зд. 38 стр. 1, офис 15.</li><br>
+                </ul>
+                <p class="about_us_p">
+                    Пользователь дает свое согласие на обработку его персональных данных, а именно совершение действий, предусмотренных п. 3 ч. 1 ст. 3 Федерального закона от 27.07.2006 N 152-ФЗ "О персональных данных", и подтверждает, что, давая такое согласие, он действует свободно, своей волей и в своем интересе.<br><br>
+                    Согласие Пользователя на обработку персональных данных является конкретным, информированным и сознательным. Настоящее согласие Пользователя признается исполненным в простой письменной форме, на обработку следующих персональных данных:
+                <br><br>
+                <ul class="custom-list">
+                    <li>фамилии, имени, отчества;</li><br>
+                    <li>номера телефона;</li><br>
+                    <li>адреса электронной почты (E-mail).</li><br>
+                </ul>
+                <p class="about_us_p">
+                    Пользователь, предоставляет лекаръ.рф право осуществлять следующие действия (операции) с персональными данными:
+                </p><br>
+                <ul class="custom-list">
+                    <li>сбор и накопление; хранение в течение установленных нормативными документами сроков хранения отчетности, но не менее трех лет, с момента даты прекращения пользования услуг Пользователем;</li><br>
+                    <li>уточнение (обновление, изменение);</li><br>
+                    <li>использование;</li><br>
+                    <li>уничтожение;</li><br>
+                    <li>обезличивание;</li><br>
+                    <li>передача по требованию суда, в т.ч., третьим лицам, с соблюдением мер, обеспечивающих защиту персональных данных от несанкционированного доступа.</li><br>
+                </ul>
+                <p class="about_us_p">
+                    Указанное согласие действует бессрочно с момента предоставления данных и может быть отозвано Вами путем подачи заявления администрации сайта с указанием данных, определенных ст. 14 Закона «О персональных данных».
+                <br><br>
+                    Отзыв согласия на обработку персональных данных может быть осуществлен путем направления Пользователем соответствующего распоряжения в простой письменной форме на адрес электронной почты.
+                <br><br>
+                    Сайт не несет ответственности за использование (как правомерное, так и неправомерное) третьими лицами Информации, размещенной Пользователем на Сайте, включая её воспроизведение и распространение, осуществленные всеми возможными способами.
+                <br><br>
+                    Сайт имеет право вносить изменения в настоящую Политику. При внесении изменений в актуальной редакции указывается дата последнего обновления. Новая редакция Политики вступает в силу с момента ее размещения, если иное не предусмотрено новой редакцией Политики.
+                <br><br>
+                    Действующая редакция Политики находится на странице по адресу:
+                    лекаръ.рф/privacypolicy
+                <br><br>
+                    К настоящей Политике и отношениям между пользователем и Сайтом, возникающим в связи с применением Политики, подлежит применению право Российской Федерации.
+                <br><br>
+            </div>
+                </div>
+            </div>
+
+    </main>
+
+
+   <footer>
+        <div class="container footer_container">
+            <menu>
+                <h4>ЦЕНТРАЛЬНЫЙ ОФИС И <br> CКЛАД:</h4>
+
+                <div class="location_footer">
+                    <a href="https://yandex.ru/maps/11029/rostov-oblast/house/observatornaya_ulitsa_38/Z0AYcQVoTUAFQFptfX9xeXVqYQ==/?ll=39.728451%2C47.308995&z=17" target="_blank" class="img_link">
+                        <img src="{% static 'img/location.svg' %}" alt="location" class="location_icon icon">
+                    </a>
+
+                    <a href="https://yandex.ru/maps/11029/rostov-oblast/house/observatornaya_ulitsa_38/Z0AYcQVoTUAFQFptfX9xeXVqYQ==/?ll=39.728451%2C47.308995&z=17" target="_blank">г.Ростов-на-Дону <br> ул.Обсерваторная 38</a>
+                </div>
+
+                <div class="phonenumber_footer">
+                    <a href="tel:+79289996699" class="img_link">
+                        <img src="{% static 'img/phone.svg' %}" alt="phone" class="phone_icon icon">
+                    </a>
+
+                    <a href="tel:+79289996699">8 928 999-66-99</a>
+                </div>
+
+                <div>
+                    <a href="mailto:contact@gmail.com" class="img_link">
+                        <img src="{% static 'img/mail.svg' %}" alt="mail" class="mail icon">
+                    </a>
+
+                    <a href="mailto:contact@gmail.com">contact@gmail.com</a>
+                </div>
+            </menu>
+
+            <menu>
+                <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                <li><a href="{% url 'howtoorder' %}">Как оформить заказ?</a></li>
+                <li><a href="{% url 'faq' %}">Вопросы и ответы</a></li>
+                <li><a href="{% url 'documents' %}"">Документы</a></li>
+                <li><a href="{% url 'privacypolicy' %}">Политика обработки <br> персональных данных</a></li>
+            </menu>
+
+            <menu>
+                <li><a href="{% url 'about' %}">О компании</a></li>
+                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                <li><a href="{% url 'quality' %}">О качестве</a></li>
+                <li><a href="{% url 'keeping' %}">О хранении</a></li>
+                <li><a href="{% url 'transport' %}">О перевозках</a></li>
+                <li><a href="{% url 'partners' %}">О партнерстве</a></li>
+            </menu>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>
