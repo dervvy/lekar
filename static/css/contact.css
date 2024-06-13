@@ -17,7 +17,6 @@ main{
 .about_us_desc_wrapper{
     padding: calc(15.5px + 15.5 * (100vw / 1600)) calc(15.5px + 41.5 * (100vw / 1600)) calc(32.5px + 32.5 * (100vw / 1600)) calc(15.5px + 15.5 * (100vw / 1600));
     background-color: #FFF;
-
     border-radius: 7px;
 }
 

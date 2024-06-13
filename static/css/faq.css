@@ -28,9 +28,7 @@ main{
 .faq_question{
     padding: 17px 16px 17px 12px;
     margin-bottom: 20px;
-
     background-color: #fff;
-
     border-radius: 7px;
 }
 
@@ -52,7 +50,6 @@ main{
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-
     margin-bottom: 8.5px;
 }
 

@@ -21,13 +21,9 @@ main{
     margin-bottom: 29.5px;
     color: #36B389;
     fill: #AFE0CF;
-
     padding: 16.5px 16px 17.5px 16px;
-
     border-radius: 7px;
-
     transition: 0.3s;
-
     cursor: pointer;
 
     
@@ -48,7 +44,6 @@ main{
     font-family: 'Futura PT';
     font-weight: 700;
     line-height: 30px;
-    /* color: #36B389; */
    
 }
 
@@ -61,5 +56,4 @@ main{
 .angle_right{
     width: 15px;
     height: 30px;
-    /* fill: #AFE0CF; */
 }

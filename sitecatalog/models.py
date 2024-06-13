@@ -2,8 +2,9 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 
+# Модель для категорий товаров
 class Category(models.Model):
-    name = models.CharField(max_length=200, db_index=True)
+    name = models.CharField(max_length=200, db_index=True) # Название категории
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
 
     class Meta:
@@ -15,15 +16,16 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/category/{self.slug}/'
+        return f'/category/{self.slug}/' # Абсолютный URL для категории
 
+# Функция для генерации имени файла изображения
 def get_image_filename1(instance, filename):
     title = instance.name
     slug = slugify(title)
     unique_slug = slug
     return "photos/%s-%s" % (unique_slug, filename)
 
-
+# Модель для товаров
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name="Категория")
     name = models.CharField(max_length=200, db_index=True, verbose_name="Название")
@@ -57,11 +59,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return reverse('product', kwargs={'category_slug': self.category.slug, 'product_slug': self.slug})
 
-
+# Модель для запроса обратного звонка
 class CallbackRequest(models.Model):
     TIME_CHOICES = [
         ('10-12', 'с 10:00 до 12:00'),
@@ -69,7 +71,7 @@ class CallbackRequest(models.Model):
         ('14-16', 'с 14:00 до 16:00'),
         ('16-18', 'с 16:00 до 18:00'),
     ]
-    
+
     name = models.CharField(max_length=255, verbose_name='Имя')
     phone = models.CharField(max_length=20, verbose_name='Телефон')
     call_now = models.BooleanField(default=False, verbose_name='Позвонить сейчас')
